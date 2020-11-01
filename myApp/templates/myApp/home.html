@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style>
+            .navbar ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #00BFFF;
+            }
+            
+            .navbar li {
+                float: left;
+            }
+            
+            .navbar a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            .navbar li a:hover {
+                background-color: #87CEFA;
+            }
+
+            .buttons ul{
+                list-style-type: none;
+                position: center;
+                margin-top: 25%;
+                margin-left: 25%;
+            }
+            .buttons li{
+                margin: 10;
+                background-color: rgb(71, 157, 255);
+                color: white;
+                border: 2px solid black;
+                padding: 50px;
+                float: left;
+            }
+
+            .buttons a{
+                text-decoration: none;
+                color: white;
+            }
+
+
+
+
+    </style>
+    <title>Title</title>
+</head>
+<body bgcolor="lightblue">
+    <div class="navbar">
+    <ul>
+        <li><a href="{% url 'site-addStudent' %}">Add Student</a></li>
+        <li><a href="{% url 'site-viewStudent' %}">View Student</a></li>
+    </ul>
+    </div>
+
+    <div class="buttons">
+        <ul>
+            <li><a id="button1" href="{% url 'site-addStudent' %}">Add Student</a></li>
+            <li><a id="button2" href="{% url 'site-viewStudent' %}">View Student</a></li>
+        </ul>
+    </div>
+</body>
+</html> 
+

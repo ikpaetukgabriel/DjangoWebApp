@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+            .navbar ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #00BFFF;
+            }
+            
+            .navbar li {
+                float: left;
+            }
+            
+            .navbar a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            
+            .navbar li a:hover {
+                background-color: #87CEFA;
+            }
+
+    </style>
+    <title>Title</title>
+</head>
+<body bgcolor="lightblue">
+    <div class="navbar">
+    <ul>
+        <li><a href="{% url 'site-home' %}">Home</a></li>
+        <li><a href="{% url 'site-viewStudent' %}">View Student</a></li>
+    </ul>
+    </div>
+</body>
+</html> 
+
