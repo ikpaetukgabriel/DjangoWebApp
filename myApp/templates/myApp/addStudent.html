@@ -1,44 +1,154 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Add Student</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/style.css' %}">
     <style>
-            .navbar ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #00BFFF;
-            }
-            
-            .navbar li {
-                float: left;
-            }
-            
-            .navbar a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-            
-            .navbar li a:hover {
-                background-color: #87CEFA;
-            }
+    html, body {
+        min-height: 100%; 
+        }
+
+        body, div, form, input, select, p { 
+        outline: none;
+        font-size: 16px;
+        color: #eee;
+        }
+  
+        h2 {
+        font-weight: 400;
+        margin: 0;
+        padding: 0 80px;
+        }
+
+        #reg-here{
+            color:  #00BFFF;
+
+        }
+
+        .main-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: calc(100% - 50px);
+        }
+
+
+        form {
+        background: rgba(0, 0, 0, 0.7); 
+        padding: 25px;
+        }
+
+        .title {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        }
+
+        .info {
+        display: flex;
+        flex-direction: column;
+        }
+        input, select {
+        padding: 5px;
+        margin-bottom: 30px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid #eee;
+        }
+        input::placeholder {
+        color: #eee;
+        }
+        option:focus {
+        border: none;
+        }
+        option {
+        background: black; 
+        border: none;
+        }
+        .checkbox input {
+        margin: 0 0 0 0;
+        vertical-align: middle;
+        }
+
+        .btn-item, button {
+        padding: 10px 5px;
+        margin-top: 20px;
+        border-radius: 5px; 
+        border: none;
+        background:  #00BFFF;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 400;
+        color: #fff;
+        }
+        .btn-item {
+        display: inline-block;
+        margin: 20px 5px 0;
+        }
+        button {
+        width: 100%;
+        cursor: pointer;
+        }
+        button:hover, .btn-item:hover {
+        background:  #87CEFA;
+        }
+        @media (min-width: 568px) {
+            html, body {
+            height: 100%;}
+        }
+        .body-addStudent {
+            background-image: url('{% static "myApp/images/add-student.jpg" %}');
+            background-size:100%;
+          }
+        ::placeholder{
+          font-style: italic;
+        }
 
     </style>
-    <title>Title</title>
+
 </head>
-<body bgcolor="lightblue">
+<body class="body-addStudent">
     <div class="navbar">
     <ul>
         <li><a href="{% url 'site-home' %}">Home</a></li>
         <li><a href="{% url 'site-viewStudent' %}">View Student</a></li>
     </ul>
     </div>
+    
+    <div class="main-block">
+      <form action="{% url 'add' %}">
+        <div class="title">
+          <h2 id="reg-here"><i>Register Student</i></h2>
+        </div>
+        <div class="info">
+          <input class="fname" type="text" name="first_name" placeholder="First name">
+          <input class="lname" type="text" name="last_name" placeholder="Last name">
+          <input class="age" type="text" name="age" placeholder="Age">
+          <input class="address" type="text" name="address" placeholder="Address">
+          <input type="text" name="phone_number" placeholder="Phone number">
+          <input type="text" name="unique_number" placeholder="Choose a unique number (3)">
+          <select name="student_class">
+            <option value="class" selected>[choose class]</option>
+            <option value="First Grade" selected><i>First Grade</i></option>
+            <option value="Second Grade" selected><i>Second Grade</i></option>
+            <option value="Third Grade" selected><i>Third Grade</i></option>
+            <option value="Fourth Grade" selected><i>Fourth Grade</i></option>
+            <option value="Fifth Grade" selected><i>Fifth Grade</i></option>
+            <option value="Sixth Grade" selected><i>Sixth  Grade</i></option>
+            <option value="Seventh Grade" selected><i>Seventh Grade</i></option>
+            <option value="Eight Grade" selected><i>Eight Grade</i></option>
+          </select>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 </body>
 </html> 
-

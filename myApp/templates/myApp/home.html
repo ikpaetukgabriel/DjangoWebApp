@@ -1,75 +1,94 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Student Registry</title>
+    {% load static %}
 
+    <link rel="stylesheet" type="text/css" href="{% static 'myApp/style.css' %}">
     <style>
-            .navbar ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #00BFFF;
-            }
+        .body-index {
+            background-image: url('{% static "myApp/images/school-home.jpg" %}');
+            background-size:100%;
+          }
+          .main-headers {
+            text-align: center;
+            margin-top: 250px;
+            margin-right: 3%;
+            margin-bottom: 0;
+            color:white;
+            font-size: 80px;
+            -webkit-text-stroke: 2px #00BFFF;
+          }
+
+        .flex-parent {
+            display: flex;
+        }
             
-            .navbar li {
-                float: left;
-            }
-            
-            .navbar a {
-                display: block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
-            
-            .navbar li a:hover {
-                background-color: #87CEFA;
-            }
-
-            .buttons ul{
-                list-style-type: none;
-                position: center;
-                margin-top: 25%;
-                margin-left: 25%;
-            }
-            .buttons li{
-                margin: 10;
-                background-color: rgb(71, 157, 255);
-                color: white;
-                border: 2px solid black;
-                padding: 50px;
-                float: left;
-            }
-
-            .buttons a{
-                text-decoration: none;
-                color: white;
-            }
-
-
-
-
+        .jc-center {
+            justify-content: center;
+        }
+        
+        .buttons {
+            background-color: white;
+            border-radius: 12px;
+            color: white;
+            padding : 20px 50px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-right: 20px;
+            margin-top: 50px;
+            cursor: pointer;
+            border: 2px solid black;
+            }  
+        
+        /* Blue */
+        .addStudent {
+            border-color: #2196F3;
+            color: dodgerblue;
+        }
+        
+        .addStudent:hover {
+            background: #00BFFF;
+            color: white;
+        }
+        
+        /* Orange */
+        .viewStudent {
+            border-color: #ff9800;
+            color: orange;
+        }
+        
+        .viewStudent:hover {
+            background: #ff9800;
+            color: white;
+        }
+  
     </style>
-    <title>Title</title>
+
 </head>
-<body bgcolor="lightblue">
+<body class="body-index">
     <div class="navbar">
     <ul>
+        <li><a href="{% url 'site-home' %}">Home</a></li>
         <li><a href="{% url 'site-addStudent' %}">Add Student</a></li>
         <li><a href="{% url 'site-viewStudent' %}">View Student</a></li>
     </ul>
     </div>
-
-    <div class="buttons">
-        <ul>
-            <li><a id="button1" href="{% url 'site-addStudent' %}">Add Student</a></li>
-            <li><a id="button2" href="{% url 'site-viewStudent' %}">View Student</a></li>
-        </ul>
+    <h1 class="main-headers">
+        <i>Welcome</i>
+    </h1>
+  
+    <div class="flex-parent jc-center">
+        <a href="{% url 'site-addStudent' %}" class="buttons addStudent"><i>Add Student</i></a>
+        <a href="{% url 'site-viewStudent' %}" class="buttons viewStudent"><i>View Student</i></a>
     </div>
+    
 </body>
 </html> 
 
